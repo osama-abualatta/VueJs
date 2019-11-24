@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Vuejs</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  </head>
+  <body>
+    <div id="vue-app">
+      <button @click.once="add(1)"> add a year</button>
+      <button @click="subtract(1)"> subtract a year</button>
+      <button @dblclick="add(10)"> add 10 year</button>
+      <button @dblclick="subtract(10)"> subtract 10 year</button>
+      <p>my age is {{age}}</p>
+      <div id="canvas"v-on:mousemove="updatexy">{{x}}, {{y}}</div>
+      <a v-on:click.prevent="click" href="http://www.google.com">google</a>
+<div >
+  <input type="text" v-model="Name" >
+</div>
+
+  <h2>{{Name}}</h2>
+  <button @click="a++"> add to A</button>
+  <button @click="b++">  add to B</button>
+  <p>A - {{a}}</p>
+  <p>B - {{b}}</p>
+  <p >Age+A ={{addToA}}</p>
+  <p >Age+B ={{addToB}}</p>
+                                    <!--conditions-->
+    <h1>Conditions</h1>
+    <button v-on:click="error= !error">Toggle Error</button>
+    <button v-on:click="success= !success">Toggle Success</button>
+  <!--  <p v-if="error">that is an error</p>
+    <p v-else-if="success"> wwow success</p>-->
+    <p v-show="error">that is an error</p>
+    <p v-show="success"> wwow success</p>
+    <!--looping v-for-->
+
+    </div>
+                        <!--looping v-for-->
+    <div id="vue-app1">
+      <h2>looping</h2>
+    <ul>
+      <li v-for="character in characters">{{character}}</li>
+    </ul>
+    <ul>
+      <li v-for="emp in emps">{{emp.name}} - {{emp.age}}</li>
+    </ul>
+    <template v-for="(emp,index) in emps">
+    <h3>{{index}}.{{emp.name}}</h3>
+    <p>{{emp.age}}</p>
+    </template>
+    <template v-for="emp in emps">
+      <div v-for="(val,key) in emp">
+        <p>{{key}} : {{val}}</p>
+      </div>
+
+    </template>
+    </div>
+                        <!-- multiple vue instanse-->
+                        <h2>multiple vue instanse</h2>
+    <div id="vue-app-one">
+     <p>{{title}}</p>
+     <p>{{greet}}</p>
+    </div>
+    <div id="vue-app-two">
+     <p>{{title}}</p>
+     <p>{{greet}}</p>
+     <button v-on:click="changetitle">change vue app one title </button>
+    </div>
+                              <!-- intro to component-->
+          <div id="Vue-app-1">
+            <h2>Vue app 1</h2>
+            <greeting></greeting>
+          </div>
+          <div id="Vue-app-2">
+            <h2>Vue app 2</h2>
+            <greeting></greeting>
+          </div>
+                               <!-- refs-->
+
+<script src="app.js">
+
+</script>
+  </body>
+</html>
